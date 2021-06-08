@@ -15,7 +15,6 @@ console.log(level);
 
 while (pcNumbers.length < 16) {
 
-
     if (level == 0) {
         var rndNumber = getRndInteger(1,100);   
     } else if(level == 1){
@@ -23,7 +22,6 @@ while (pcNumbers.length < 16) {
     } else if (level == 2){
         var rndNumber = getRndInteger(1,50);
     }
-
 
     if (!pcNumbers.includes(rndNumber)) {
         pcNumbers.push(rndNumber);     
