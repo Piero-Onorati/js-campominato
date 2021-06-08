@@ -7,6 +7,19 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50 */
 
 
+// if (diffuclty = 0) {
+
+//     var rndNumber = getRndInteger(1,100)
+    
+// } else if (diffuclty = 2) {
+//     var rndNumber = getRndInteger(1,80)
+    
+// } else if (diffuclty = 3) {
+//     var rndNumber = getRndInteger(1,50)
+// } 
+    
+
+
 
 var pcNumbers = [];
 
@@ -21,18 +34,16 @@ while (pcNumbers.length < 16) {
 
 console.log(pcNumbers)
 
-console.log(pcNumbers.length);
-
 
 var userNumbers = [];
 
-console.log(userNumbers.length);
+var attempts = 0;
 
-while (userNumbers.length < 80 - pcNumbers.length) {
+while (userNumbers.length < 20 - pcNumbers.length) {
 
     var number = parseInt(prompt('Inserisci un numero da 1 a 100 per 80 volte'));
 
-    while (number <= 0 || number > 100) {
+    while (isNaN(number) || number <= 0 || number > 100) {
         number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a 100')) 
     } 
 
@@ -48,13 +59,13 @@ while (userNumbers.length < 80 - pcNumbers.length) {
         alert('numero già inserito')
     }
 
+    attempts++
+    console.log(attempts);
+
 }
 
 console.log(userNumbers)
-
-
-
-
+console.log(attempts);
 
 // ----------- FUNZIONI ------------ //
 
@@ -62,3 +73,5 @@ console.log(userNumbers)
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
+
+
