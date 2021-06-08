@@ -7,30 +7,29 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50 */
 
 
-// if (diffuclty = 0) {
-
-//     var rndNumber = getRndInteger(1,100)
-    
-// } else if (diffuclty = 2) {
-//     var rndNumber = getRndInteger(1,80)
-    
-// } else if (diffuclty = 3) {
-//     var rndNumber = getRndInteger(1,50)
-// } 
-    
-
-
 
 var pcNumbers = [];
 
+var level = parseInt(prompt('inserisci il livello di difficoltà'));
+console.log(level);
+
 while (pcNumbers.length < 16) {
 
-    var rndNumber = getRndInteger(1,100);
+
+    if (level == 0) {
+        var rndNumber = getRndInteger(1,100);   
+    } else if(level == 1){
+        var rndNumber = getRndInteger(1,80);
+    } else if (level == 2){
+        var rndNumber = getRndInteger(1,50);
+    }
+
 
     if (!pcNumbers.includes(rndNumber)) {
         pcNumbers.push(rndNumber);     
     } 
 }
+
 
 console.log(pcNumbers)
 
@@ -60,7 +59,7 @@ while (userNumbers.length < 20 - pcNumbers.length) {
     }
 
     attempts++
-    console.log(attempts);
+    console.log('attemps:'+ attempts);
 
 }
 
@@ -73,5 +72,3 @@ console.log(attempts);
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-
-
