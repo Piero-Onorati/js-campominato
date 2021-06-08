@@ -21,8 +21,38 @@ while (pcNumbers.length < 16) {
 
 console.log(pcNumbers)
 
+console.log(pcNumbers.length);
+
 
 var userNumbers = [];
+
+console.log(userNumbers.length);
+
+while (userNumbers.length < 80 - pcNumbers.length) {
+
+    var number = parseInt(prompt('Inserisci un numero da 1 a 100 per 80 volte'));
+
+    while (number <= 0 || number > 100) {
+        number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a 100')) 
+    } 
+
+    if (pcNumbers.includes(number)) {
+        alert ('Hai perso')
+        break  
+    } 
+        
+    if (!userNumbers.includes(number)) {
+        userNumbers.push(number); 
+          
+    }else{
+        alert('numero già inserito')
+    }
+
+}
+
+console.log(userNumbers)
+
+
 
 
 
