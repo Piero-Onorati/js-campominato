@@ -37,7 +37,7 @@ while (userNumbers.length < 80 - pcNumbers.length) {
     } 
 
     if (pcNumbers.includes(number)) {
-        alert ('Hai perso')
+        alert ('Hai perso! Il tuo punteggio è :' + userNumbers.length )
         break  
     } 
         
@@ -56,17 +56,7 @@ console.log(userNumbers)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// ----------- FUNZIONI ------------ //
 
 
 function getRndInteger(min, max) {
