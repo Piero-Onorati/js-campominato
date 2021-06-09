@@ -6,8 +6,6 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50 */
 
-
-
 document.getElementById('btn').addEventListener('click', function(){
     
     var pcNumbers = [];
@@ -16,6 +14,7 @@ document.getElementById('btn').addEventListener('click', function(){
 
     var level = parseInt(document.getElementById('difficulty').value);
 
+    // Algorithm to generate pc numbers
     while (pcNumbers.length < 16) {
 
         if (level == 0) {
@@ -40,6 +39,7 @@ document.getElementById('btn').addEventListener('click', function(){
 
     var attempts = 0;
 
+    // Algorithm to generate user numbers
     while (userNumbers.length < userGuess - pcNumbers.length) {
 
         var number = parseInt(prompt('Inserisci un numero da 1 a '+ userGuess));
@@ -49,6 +49,8 @@ document.getElementById('btn').addEventListener('click', function(){
         } 
 
         if (pcNumbers.includes(number)) {
+
+            // OUTPUTS
             alert('Hai perso')
             document.getElementById('result').innerHTML = 'Il tuo punteggio è : ' + ' ' + userNumbers.length ;
             document.getElementById('score').innerHTML = userNumbers.length;
@@ -56,7 +58,6 @@ document.getElementById('btn').addEventListener('click', function(){
             document.getElementById('usernumbers').innerHTML = 'Yours numbers: ' + userNumbers;
             break
         
-             
         } else{
             if (!userNumbers.includes(number)) {
                 userNumbers.push(number); 
@@ -65,9 +66,10 @@ document.getElementById('btn').addEventListener('click', function(){
                 alert('numero già inserito')
             }
         }
-            
+        
         attempts++
 
+        // OUTPUTS   
         document.getElementById('attempts').innerHTML=  attempts
         document.getElementById('result').innerHTML = 'Il tuo punteggio è : ' + ' ' + userNumbers.length ;
         document.getElementById('score').innerHTML = userNumbers.length;
@@ -77,8 +79,8 @@ document.getElementById('btn').addEventListener('click', function(){
 
 });
 
-// ----------- FUNZIONI ------------ //
 
+// ----------- FUNZIONI ------------ //
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
