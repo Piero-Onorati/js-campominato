@@ -8,61 +8,77 @@ BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richie
 
 
 
-var pcNumbers = [];
+document.getElementById('btn').addEventListener('click', function(){
+    
 
-var level = parseInt(prompt('inserisci il livello di difficoltà'));
-console.log(level);
 
-while (pcNumbers.length < 16) {
+    var pcNumbers = [];
 
-    if (level == 0) {
-        var rndNumber = getRndInteger(1,100);   
-    } else if(level == 1){
-        var rndNumber = getRndInteger(1,80);
-    } else if (level == 2){
-        var rndNumber = getRndInteger(1,50);
+    var userGuess;
+
+    var level = parseInt(document.getElementById('difficulty').value);
+    console.log(level);
+
+    while (pcNumbers.length < 16) {
+
+        if (level == 0) {
+            var rndNumber = getRndInteger(1,100);
+            userGuess = 100;
+            
+        } else if(level == 1){
+            var rndNumber = getRndInteger(1,80);
+            userGuess = 80;
+            
+        } else if (level == 2){
+            var rndNumber = getRndInteger(1,50);
+            userGuess = 50;
+        }
+
+        if (!pcNumbers.includes(rndNumber)) {
+            pcNumbers.push(rndNumber);     
+        } 
     }
 
-    if (!pcNumbers.includes(rndNumber)) {
-        pcNumbers.push(rndNumber);     
-    } 
-}
+
+    console.log(pcNumbers)
+    console.log(userGuess);
 
 
-console.log(pcNumbers)
+    var userNumbers = [];
 
+    var attempts = 0;
 
-var userNumbers = [];
+    while (userNumbers.length < 20 - pcNumbers.length) {
 
-var attempts = 0;
+        var number = parseInt(prompt('Inserisci un numero da 1 a 100 per 80 volte'));
 
-while (userNumbers.length < 20 - pcNumbers.length) {
+        while (isNaN(number) || number <= 0 || number > 100) {
+            number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a 100')) 
+        } 
 
-    var number = parseInt(prompt('Inserisci un numero da 1 a 100 per 80 volte'));
+        if (pcNumbers.includes(number)) {
+            alert ('Hai perso! Il tuo punteggio è :' + userNumbers.length )
+             
+        } else{
+            if (!userNumbers.includes(number)) {
+                userNumbers.push(number); 
+                
+            }else{
+                alert('numero già inserito')
+            }
 
-    while (isNaN(number) || number <= 0 || number > 100) {
-        number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a 100')) 
-    } 
+        }
+            
 
-    if (pcNumbers.includes(number)) {
-        alert ('Hai perso! Il tuo punteggio è :' + userNumbers.length )
-        break  
-    } 
-        
-    if (!userNumbers.includes(number)) {
-        userNumbers.push(number); 
-          
-    }else{
-        alert('numero già inserito')
+        attempts++
+        console.log('attemps:'+ attempts);
+
     }
 
-    attempts++
-    console.log('attemps:'+ attempts);
+    console.log(userNumbers)
+    console.log(attempts);
 
-}
-
-console.log(userNumbers)
-console.log(attempts);
+});
 
 // ----------- FUNZIONI ------------ //
 
