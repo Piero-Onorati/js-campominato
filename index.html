@@ -12,29 +12,42 @@
 <body>
 
     <div class="container">
+
+        <!-- start ITEM-1 Title game -->
         <div class="item item1">
             <h1>Campo Minato</h1>
         </div>
+        <!-- end ITEM-1 Title game -->
+
+        <!-- start ITEM-2 -->
         <div class="item item2">
 
+            <!-- start ITEM-2 top: difficulty + play button -->
             <div class="item2-top">
                 <label for="difficulty">Difficoltà</label>
                 <select name="" id="difficulty">
                     <option value="0">Livello 1</option>
                     <option value="1">Livello 2</option>
                     <option value="2">Livello 3</option>
-                </select>
-    
+                </select>  
                 <button id="btn">Play</button>
             </div>
+            <!-- end ITEM-2 top: difficulty + play button -->
 
+            <!-- start ITEM-2 bottom: attempts -->
             <div class="item2-bottom">
                 <h3>Attempts:</h3>
                 <span id="attempts"></span>
             </div>
+            <!-- end ITEM-2 bottom: attempts -->
+
         </div>
+        <!-- end ITEM-2 -->
+
+        <!-- start ITEM-3: rules + result -->
         <div class="item item3">
 
+            <!-- start rules -->
             <div class="rules">
                 <h3>Regole del gioco</h3>
                 <p>Il computer seleziona 16 numeri nascosti, compresi in un range determinato dal livello di difficolta:</p>
@@ -44,17 +57,26 @@
                 <p>L'utente deve cercare di indovinare i restanti numeri. Se sceglierà un numero già selzionato dal computer la mina esploderà!</p>
                 <p>Scegli il livello di difficoltà e Clicca il pulsante PLAY!!!</p>           
             </div>
-            
+            <!-- end rules -->
+
+            <!-- start result -->
             <div class="result">
                 <h3 id="result"></h3>
                 <h4 class="pcnumbers" id='pcnumbers'></h4>
                 <h4 class="usernumbers" id="usernumbers"></h4>
             </div>
+            <!-- end result -->
 
         </div>
+        <!-- end ITEM-3: rules + result -->
+
+        <!-- start ITEM-4 -->
         <div class="item item4">
             <h2>SCORE:<span id="score" ></span></h2>
         </div>
+        <!-- end ITEM-4 -->
+        
+    </div>
 
 
     <script src="js/script.js"></script>
