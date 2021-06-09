@@ -50,7 +50,7 @@ document.getElementById('btn').addEventListener('click', function(){
 
         if (pcNumbers.includes(number)) {
             alert('Hai perso')
-            document.getElementById('result').innerHTML = 'Il tuo punteggio è :' + ''+ userNumbers.length ;
+            document.getElementById('result').innerHTML = 'Il tuo punteggio è : ' + ' ' + userNumbers.length ;
             document.getElementById('score').innerHTML = userNumbers.length;
             document.getElementById('pcnumbers').innerHTML = 'PC numbers: ' + pcNumbers;
             document.getElementById('usernumbers').innerHTML = 'Yours numbers: ' + userNumbers;
@@ -69,7 +69,7 @@ document.getElementById('btn').addEventListener('click', function(){
         attempts++
 
         document.getElementById('attempts').innerHTML=  attempts
-        document.getElementById('result').innerHTML = 'Il tuo punteggio è :' + ''+ userNumbers.length ;
+        document.getElementById('result').innerHTML = 'Il tuo punteggio è : ' + ' ' + userNumbers.length ;
         document.getElementById('score').innerHTML = userNumbers.length;
         document.getElementById('pcnumbers').innerHTML = 'PC numbers: ' + pcNumbers;
         document.getElementById('usernumbers').innerHTML = 'Yours numbers: ' + userNumbers;
