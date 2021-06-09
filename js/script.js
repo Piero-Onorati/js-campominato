@@ -14,21 +14,20 @@ document.getElementById('btn').addEventListener('click', function(){
 
     var level = parseInt(document.getElementById('difficulty').value);
 
+    if (level == 0) {
+        userGuess = 100;
+        
+    } else if(level == 1){
+        userGuess = 80;
+        
+    } else if (level == 2){
+        userGuess = 50;
+    }
+
     // Algorithm to generate pc numbers
     while (pcNumbers.length < 16) {
 
-        if (level == 0) {
-            var rndNumber = getRndInteger(1,100);
-            userGuess = 100;
-            
-        } else if(level == 1){
-            var rndNumber = getRndInteger(1,80);
-            userGuess = 80;
-            
-        } else if (level == 2){
-            var rndNumber = getRndInteger(1,50);
-            userGuess = 50;
-        }
+        var rndNumber = getRndInteger(1,userGuess);
 
         if (!pcNumbers.includes(rndNumber)) {
             pcNumbers.push(rndNumber);     
