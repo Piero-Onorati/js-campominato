@@ -10,14 +10,11 @@ BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richie
 
 document.getElementById('btn').addEventListener('click', function(){
     
-
-
     var pcNumbers = [];
 
     var userGuess;
 
     var level = parseInt(document.getElementById('difficulty').value);
-    console.log(level);
 
     while (pcNumbers.length < 16) {
 
@@ -39,25 +36,26 @@ document.getElementById('btn').addEventListener('click', function(){
         } 
     }
 
-
-    console.log(pcNumbers)
-    console.log(userGuess);
-
-
     var userNumbers = [];
 
     var attempts = 0;
 
-    while (userNumbers.length < 20 - pcNumbers.length) {
+    while (userNumbers.length < userGuess - pcNumbers.length) {
 
-        var number = parseInt(prompt('Inserisci un numero da 1 a 100 per 80 volte'));
+        var number = parseInt(prompt('Inserisci un numero da 1 a '+ userGuess));
 
         while (isNaN(number) || number <= 0 || number > 100) {
-            number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a 100')) 
+            number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a '+ userGuess));
         } 
 
         if (pcNumbers.includes(number)) {
-            alert ('Hai perso! Il tuo punteggio è :' + userNumbers.length )
+            alert('Hai perso')
+            document.getElementById('result').innerHTML = 'Il tuo punteggio è :' + ''+ userNumbers.length ;
+            document.getElementById('score').innerHTML = userNumbers.length;
+            document.getElementById('pcnumbers').innerHTML = 'PC numbers: ' + pcNumbers;
+            document.getElementById('usernumbers').innerHTML = 'Yours numbers: ' + userNumbers;
+            break
+        
              
         } else{
             if (!userNumbers.includes(number)) {
@@ -66,17 +64,16 @@ document.getElementById('btn').addEventListener('click', function(){
             }else{
                 alert('numero già inserito')
             }
-
         }
             
-
         attempts++
-        console.log('attemps:'+ attempts);
 
+        document.getElementById('attempts').innerHTML=  attempts
+        document.getElementById('result').innerHTML = 'Il tuo punteggio è :' + ''+ userNumbers.length ;
+        document.getElementById('score').innerHTML = userNumbers.length;
+        document.getElementById('pcnumbers').innerHTML = 'PC numbers: ' + pcNumbers;
+        document.getElementById('usernumbers').innerHTML = 'Yours numbers: ' + userNumbers;
     }
-
-    console.log(userNumbers)
-    console.log(attempts);
 
 });
 

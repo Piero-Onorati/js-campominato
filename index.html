@@ -16,14 +16,22 @@
             <h1>Campo Minato</h1>
         </div>
         <div class="item item2">
-            <label for="difficulty">Difficoltà</label>
-            <select name="" id="difficulty">
-                <option value="0">Livello 1</option>
-                <option value="1">Livello 2</option>
-                <option value="2">Livello 3</option>
-            </select>
 
-            <button id="btn">Play</button>
+            <div class="item2-top">
+                <label for="difficulty">Difficoltà</label>
+                <select name="" id="difficulty">
+                    <option value="0">Livello 1</option>
+                    <option value="1">Livello 2</option>
+                    <option value="2">Livello 3</option>
+                </select>
+    
+                <button id="btn">Play</button>
+            </div>
+
+            <div class="item2-bottom">
+                <h3>Attempts:</h3>
+                <span id="attempts"></span>
+            </div>
         </div>
         <div class="item item3">
 
@@ -34,15 +42,22 @@
                 <span>Livello 2: numeri in un range tra 0 e 80</span>
                 <span>Livello 3: numeri in un range tra 0 e 50</span>
                 <p>L'utente deve cercare di indovinare i restanti numeri. Se sceglierà un numero già selzionato dal computer la mina esploderà!</p>
-                <p>Scegli il livello di difficoltà e Clicca il pulsante PLAY!!!</p>
+                <p>Scegli il livello di difficoltà e Clicca il pulsante PLAY!!!</p>           
             </div>
+            
+            <div class="result">
+                <h3 id="result"></h3>
+                <h4 class="pcnumbers" id='pcnumbers'></h4>
+                <h4 class="usernumbers" id="usernumbers"></h4>
+            </div>
+
         </div>
         <div class="item item4">
-            <h2>SCORE:<span>12345465</span></h2>
+            <h2>SCORE:<span id="score" ></span></h2>
         </div>
 
 
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
     
 </body>
 </html>

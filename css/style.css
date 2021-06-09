@@ -18,7 +18,7 @@ body{
     margin: 50px auto;
     display: grid;
     grid-template-columns: 30% auto auto auto;
-    grid-template-rows: 15% auto auto auto;
+    grid-template-rows: 75px auto auto auto;
     border-width: 10px;
     border-style: outset;
 }
@@ -40,6 +40,7 @@ body{
     color:#333 ;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .item2 label{
@@ -63,7 +64,6 @@ body{
     grid-column:1/5;
     background-color: rgb(220, 220, 220);
     color: #4f4f4f;
-    
 }
 
 
@@ -104,6 +104,22 @@ p{
 .rules span{
     display: block;
     padding: 5px 0;
+}
+
+.result{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.result h4{
+    padding:10px;
+}
+.pcnumbers{
+    color:#ff6060
+}
+
+.usernumbers{
+    color: black;
 }
 
 
