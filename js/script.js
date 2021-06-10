@@ -43,7 +43,7 @@ document.getElementById('btn').addEventListener('click', function(){
 
         var number = parseInt(prompt('Inserisci un numero da 1 a '+ userGuess));
 
-        while (isNaN(number) || number <= 0 || number > 100) {
+        while (isNaN(number) || number <= 0 || number > userGuess) {
             number = parseInt(prompt('Attenzione!!! Puoi Inserire solo numeri da 1 a '+ userGuess));
         } 
 

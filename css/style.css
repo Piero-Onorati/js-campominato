@@ -12,7 +12,6 @@ body{
 }
 
 .container{
-    height: 80vh;
     width: 70%;
     margin: 50px auto;
     display: grid;
@@ -106,6 +105,11 @@ p{
     font-size: 18px;
     text-align-last: center;
 }
+
+.item2 button:hover{
+    background-color: rgba(51,51,51,0.2);
+}
+
 
 .item2 select {
     width: 40%;
